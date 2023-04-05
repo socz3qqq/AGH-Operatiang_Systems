@@ -1,0 +1,195 @@
+[REPL] $ EXEC TIMES:
+REAL: 7063 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 23073901 nanoseconds 
+USER: 2 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 22048911 nanoseconds 
+USER: 2 seconds 
+SYSTEM: 1 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 19945334 nanoseconds 
+USER: 2 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 19984791 nanoseconds 
+USER: 2 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 21152725 nanoseconds 
+USER: 2 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 21452333 nanoseconds 
+USER: 1 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 20612281 nanoseconds 
+USER: 1 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 20226533 nanoseconds 
+USER: 2 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 20248496 nanoseconds 
+USER: 2 seconds 
+SYSTEM: 1 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 19879038 nanoseconds 
+USER: 2 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 19924868 nanoseconds 
+USER: 2 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 20546518 nanoseconds 
+USER: 2 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 20358349 nanoseconds 
+USER: 1 seconds 
+SYSTEM: 1 seconds 
+[REPL] $    16   124 15792 libwordcount.so
+
+EXEC TIMES:
+REAL: 2515 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $   78  198 1365 makefile
+!
+EXEC TIMES:
+REAL: 1603 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $  110  305 4074 repl.c
+
+EXEC TIMES:
+REAL: 1600 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $    19   145 16392 repl_shared
+
+EXEC TIMES:
+REAL: 1607 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $    25   207 16880 repl_static
+
+EXEC TIMES:
+REAL: 1543 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $  180  563 3592 results_shared_O0.txt
+
+EXEC TIMES:
+REAL: 1551 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $  152  477 3025 results_shared.txt
+
+EXEC TIMES:
+REAL: 1708 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $  180  563 3589 results_static_O0.txt
+
+EXEC TIMES:
+REAL: 1595 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $  42  82 492 test.in
+
+EXEC TIMES:
+REAL: 1607 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $   99  298 2843 wordcount.c
+
+EXEC TIMES:
+REAL: 1688 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $  27  71 594 wordcount.h
+1
+EXEC TIMES:
+REAL: 1545 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $   12   75 5040 wordcount.o
+
+EXEC TIMES:
+REAL: 1643 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ 
+EXEC TIMES:
+REAL: 14281 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 3430 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 1859 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 1650 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 1672 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 1736 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 1853 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 1695 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 1679 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 1767 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 1759 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 1786 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 1674 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 7361 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ Succesfully deleted table, now you can init another
+EXEC TIMES:
+REAL: 3089 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ EXEC TIMES:
+REAL: 3089 nanoseconds 
+USER: 0 seconds 
+SYSTEM: 0 seconds 
+[REPL] $ 

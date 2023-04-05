@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "hash_map": "c",
+        "algorithm": "c",
+        "condition_variable": "c",
+        "features.h": "c"
+    }
+}

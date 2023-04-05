@@ -1,0 +1,4 @@
+Wykonanie zestawu oceniam na 70% z racji braku kompilacji jako z dynamicznym dołączaniem biblioteki (dlopen())
+O dziwo w wynikach bibliotek statyczna okazała się gorsza od dynamicznej
+Jeśli chodzi opcje optymalizacji, to ma ona znaczenie, opcja O3 znacznie przyspiesza działanie programu,
+przy tym poziomie optymalizacji różnice między bibliotekami się zacierają
