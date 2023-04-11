@@ -1,0 +1,8 @@
+ignore: sygnał jest zawsze ignorowany - ustawienia przechwytywania
+        sygnałów są kopiowane do procesu potomnego i zostają zachowane
+        po wykonaniu funkcji exec
+handler: tak samo jak powyżej
+mask:   maska sygnałów podobnie jak ustawienia przechwytywania jest kopiowana
+        do procesu potomnego oraz zachoana po execu
+pending:sygnały oczekujący na obsłużenie nie są kopiowane do procesu potomnego
+        ale zostają zachowane po wykonaniu funkcji exec
