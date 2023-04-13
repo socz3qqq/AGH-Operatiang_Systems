@@ -1,0 +1,4 @@
+Napisz program w którym stworzysz kolejke komunikatow wstawisz tam dwa kominitkaty "witaj swiecie
+oraz "cala naprzód"
+
+Następnie odbierz wszystkie z tej kolejki zapisujac je do innego bufora i wypisz na ekran

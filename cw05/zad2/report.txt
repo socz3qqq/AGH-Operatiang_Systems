@@ -1,0 +1,48 @@
+Interval: 0.0000000010, Processess: 2
+Solution: 3.141593
+Processing time: 3.2866
+
+Interval: 0.0000000010, Processess: 10
+Solution: 3.141593
+Processing time: 0.9361
+
+Interval: 0.0000000010, Processess: 21
+Solution: 3.141593
+Processing time: 0.9231
+
+Interval: 0.0000000010, Processess: 55
+Solution: 3.141593
+Processing time: 0.8911
+
+Interval: 0.0000000005, Processess: 2
+Solution: 3.141593
+Processing time: 3.6108
+
+Interval: 0.0000000005, Processess: 10
+Solution: 3.141593
+Processing time: 1.9380
+
+Interval: 0.0000000005, Processess: 21
+Solution: 3.141593
+Processing time: 1.9762
+
+Interval: 0.0000000005, Processess: 55
+Solution: 3.141593
+Processing time: 1.9372
+
+Interval: 0.0000000001, Processess: 2
+Solution: 3.141592
+Processing time: 18.8110
+
+Interval: 0.0000000001, Processess: 10
+Solution: 3.141592
+Processing time: 9.6636
+
+Interval: 0.0000000001, Processess: 21
+Solution: 3.141592
+Processing time: 10.1608
+
+Interval: 0.0000000001, Processess: 55
+Solution: 3.141592
+Processing time: 10.7717
+
