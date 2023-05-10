@@ -25,12 +25,9 @@ int main(int argc, char * argv[]){
     init_shared_queue();
 
     create_semaphores();
-
     start_simulation();
 
     while(wait(NULL) > 0);
-
-    sleep(15);
 
     clear_up();
 
@@ -41,10 +38,9 @@ int main(int argc, char * argv[]){
 
 
 void handle_input(int argc, char * argv[]){
-    if( argc == 4){
+    if( argc == 3){
         M = atoi(argv[1]);
         N = atoi(argv[2]);
-        P = atoi(argv[3]);
     }
     else{
         printf("Invalid input!\n");
@@ -62,7 +58,7 @@ void start_simulation(){
 void create_semaphores(){
     printf("opened sem_hairdresser %d\n", create_sem(SEM_HAIRDRESSER_NAME, M));
     printf("opened sem_chairs %d\n", create_sem(SEM_CHAIRS_NAME, N));
-    printf("opened sem_wait %d\n", create_sem(SEM_WAIT_NAME, P));
+    printf("opened sem_wait %d\n", create_sem(SEM_WAIT_NAME, WAITING_ROOM));
     printf("opened sem_haircuts %d\n", create_sem(SEM_HAIRCUTS_NAME, 0));
     printf("opened sem_queue_mutex%d\n", create_sem(SEM_QUEUE_MUTEX_NAME, 1));
 }
@@ -76,8 +72,9 @@ void init_shared_queue(){
     if(queue == (Queue*) -1){
         perror("shmat");
     }
-    queue->head = NULL;
-    queue->tail = NULL;
+    queue->head = 0;
+    queue->tail = 0;
+    queue->length = 0;
 }
 
 void spawn_hairdressers(){
@@ -97,6 +94,7 @@ for ( int i = 0; i < CLIENTS_NUMBER; i++){
                 perror("client fork");
             }
         }
+        sleep(1);
     }
 }
 

@@ -1,10 +1,13 @@
-#include "headers.h"
 #include "sem.h"
 #include "shared_memory.h"
 #include "haircut_queue.h"
+#include "headers.h"
 
 void open_sems();
 int open_client_mutex(int client_pid);
+bool waiting_room_empty();
+bool hair_queue_empty();
+void check_waiting_room();
 
 
 int main(){
@@ -17,23 +20,23 @@ int main(){
     while(true){
         acquire(sem_haircuts, 0);
         printf("[hairdresser %d] Oh god, this guy looks like he hasn't been sheared for ages!\n", getpid());
-        acquire(sem_chairs, 0);
-        printf("[hairdresser %d] ~ to client ~ : take a seat and relax\n", getpid());
-        // sprawdź czy ktoś jest w kolejce
-        release(sem_wait, 0);
+        check_waiting_room();
+        if(!waiting_room_empty()) release(sem_wait, 0);
+
 
         acquire(sem_queue_mutex, 0);
-        haircut * new_haircut = pop(client_queue);
-        if(new_haircut == NULL){
-            printf("NULL HAIR\n");
+        pid_t new_haircut = pop(client_queue);
+        if(new_haircut == -1){
+            printf("BAD HAIR\n");
         }
-        printf("[hairdresser %d] 'jeeez, he will look terribly with this haircut' \n", getpid());
         release(sem_queue_mutex, 0);
-        
-        client_mutex = open_client_mutex(new_haircut->client_id);
 
-        sleep(new_haircut->hiarcut_type);
-        free(new_haircut);
+        acquire(sem_chairs, 0);
+        printf("[hairdresser %d] ~ to client %d~ : take a seat and relax\n", getpid(), new_haircut);
+        
+        client_mutex = open_client_mutex(new_haircut);
+
+        sleep((new_haircut+8)%15);
         release(sem_chairs, 0);
         printf("[hairdresser %d] 'Finally done' \n", getpid());
 
@@ -41,30 +44,45 @@ int main(){
 
         release(sem_hairdresser, 0); 
 
-        if (queue_empty(client_queue))
+        if (waiting_room_empty() && hair_queue_empty())
         {
-            printf("I hope nobody more shows up...\n");
+            printf("[hairdresser %d] I hope nobody more shows up...\n", getpid());
             sleep(TIMEOUT);
-            if (queue_empty(client_queue))
+            if (waiting_room_empty() && hair_queue_empty())
                 break;
         }
     }
-    printf("FINALLY! I can go home now and get some sleep...\n");
+    printf(" [hairdresser %d] FINALLY! I can go home now and get some sleep...\n", getpid());
     return 0;
 }
 
 int open_client_mutex(int client_pid){
     int key;
     if((key = ftok(MUTEX_PATH, client_pid)) == -1){
-        perror("Failed to create semaphore: key");
+        perror("Failed to open semaphore: key");
         exit(EXIT_FAILURE);
     }
     int semid;
     if((semid = semget(key, 0, 0)) == -1){
-        perror("Failed to create semaphore: semget");
+        perror("Failed to open semaphore: semget");
         exit(EXIT_FAILURE);
     }
     return semid;
+}
+bool waiting_room_empty(){
+    int value = semctl(sem_wait, 0, GETVAL);
+    if(value==-1){
+        perror("read sem_val fucked up");
+    }
+    return value == WAITING_ROOM;
+}
+
+bool hair_queue_empty(){
+    return semctl(sem_haircuts, 0, GETVAL) == 0;
+}
+
+void check_waiting_room(){
+    printf("waiting room: %d\n", semctl(sem_wait, 0, GETVAL));
 }
 
 void open_sems(){

@@ -10,24 +10,25 @@ void create_self_mutex();
 void delete_self_mutex();
 
 int main(){ 
+    printf("[CLIENT %d] hello there!\n", getpid());
     open_sems();
     create_self_mutex();
     Queue * client_queue = attach_shared_queue(SHARED_MEMORY);
     
     if(acquire(sem_hairdresser, IPC_NOWAIT) == -1){
         printf("[CLIENT %d] All hairdressers are accupied, I'll wait in the queue\n", getpid());
-        if(acquire(sem_wait, 0) == -1){
-            perror("failed to acuire waiting room");
+        if(acquire(sem_wait, IPC_NOWAIT) == -1){
             printf("[CLIENT %d] Queue is full, I will come another time\n", getpid());
             exit(0);
         }
-        acquire(sem_hairdresser, 0);
+         acquire(sem_hairdresser, 0);
     }
     printf("[CLIENT %d] Great! One of the hairdressers is free, I must choose a haircut now\n", getpid());
     if(acquire(sem_queue_mutex, 0) == -1){
-        perror("failed to acquire queue");
+        perror("failed to acquire queue\n");
     }
-    push(client_queue, 10, getpid());
+    push(client_queue, getpid());
+  
     release(sem_queue_mutex, 0);
 
     release(sem_haircuts, 0);

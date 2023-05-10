@@ -5,7 +5,7 @@ CLIENT=client
 HAIRDRESSER=hairdresser
 UTIL=sem.c haircut_queue.c shared_memory.c
 
-all:
+all: 
 	make salon
 	make client
 	make hairdresser

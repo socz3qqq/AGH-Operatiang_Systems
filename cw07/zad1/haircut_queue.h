@@ -9,23 +9,21 @@
 #include <sys/types.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#ifndef MAX_QUEUE_SIZE
+#define MAX_QUEUE_SIZE 1024
 
-
-typedef struct haircut{
-    int hiarcut_type;
-    pid_t client_id;
-    struct haircut* next;
-
-} haircut;
+#endif
 
 typedef struct Queue{
-    haircut* head;
-    haircut* tail;
+    int head;
+    int tail;
+    int length;
+    int q[MAX_QUEUE_SIZE];
 } Queue;
 
-void push(Queue * queue, int type, pid_t client);
+void push(Queue * queue, pid_t client);
 
-haircut * pop(Queue * queue);
+int pop(Queue * queue);
 
 bool queue_empty(Queue * queue);
 

@@ -6,6 +6,8 @@
 #include <sys/sem.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
+
 
 int create_sem(const char * filename, int val);
 int open_sem(const char * filename);

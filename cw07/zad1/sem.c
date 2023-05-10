@@ -7,7 +7,7 @@ int create_sem(const char * filename, int val){
         perror("Failed to create semaphore: key");
         return -1;
     }
-    if((semid = semget(key, 1, 0664 | IPC_CREAT)) == -1){
+    if((semid = semget(key, 1, 0666 | IPC_CREAT)) == -1){
         perror("Failed to create semaphore: semget");
         return -1;
     }
@@ -25,6 +25,7 @@ int open_sem(const char * filename){
         return -1;
     }
     if((semid = semget(key, 1, 0)) == -1){
+        printf("filename: %s, pid: %d\n", filename, getpid());
         perror("Failed to open semaphore: semget");
         return -1;
     }
@@ -42,12 +43,12 @@ void unlink_sem(const char * filename){
     }
 }
 int acquire(int semid, int flags){
-    struct sembuf operations = { 0, -1, 0};
+    struct sembuf operations = { 0, -1, flags};
     return semop(semid, &operations, 1);
 
 }
 void release(int semid, int flags){
-    struct sembuf operations = { 0, 1, 0};
+    struct sembuf operations = { 0, 1, flags};
     if(semop(semid, &operations, 1) == -1){
         perror("release ");
     }
