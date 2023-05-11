@@ -15,6 +15,8 @@ client:
 	$(CC) $(CFLAGS) -o $(CLIENT) $(CLIENT).c $(UTIL)
 hairdresser:
 	$(CC) $(CFLAGS) -o $(HAIRDRESSER) $(HAIRDRESSER).c $(UTIL)
+test:
+	./hair_salon 2 1
 clean:
 	rm -rf $(CLIENT) $(SALON) $(HAIRDRESSER) *.o
 

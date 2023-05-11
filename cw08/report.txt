@@ -1,0 +1,1 @@
+Zadanie zrobione na 70%, działa wielowątkowość
